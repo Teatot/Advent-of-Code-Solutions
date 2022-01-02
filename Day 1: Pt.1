@@ -1,12 +1,10 @@
 def FileRead (name):
     with open(name, 'r') as data:
-        s = ""
-        for num in data.read():
-            if num == '\n':
-                s += " "
-            else:
-                s += str(num)
-    return list(map(int, s.split()))
+        s = []
+        for num in data.readlines():
+            if num != '\n':
+                s.append(int(num))
+    return s
  
  def Solution_1 (list):
       incr = 0
