@@ -1,0 +1,18 @@
+def FileRead (name):
+    with open(name, 'r') as data:
+        s = ""
+        for num in data.read():
+            if num == '\n':
+                s += " "
+            else:
+                s += str(num)
+    return list(map(int, s.split()))
+ 
+ def Solution_1 (list):
+      incr = 0
+      for i in range(1, len(list)):
+          j = i - 1
+          element = list[i]
+          if element - list[j] > 0:
+              incr += 1
+      return incr
