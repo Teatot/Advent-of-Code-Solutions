@@ -1,0 +1,26 @@
+def FileRead (name):
+    with open(name, 'r') as data:
+        l = ""
+        for line in data.readlines():
+            l += str(line)
+    return l.split("\n")
+    
+def Solution_5 (list):
+    most, least = "", ""
+    for i in range(len(list[0])):
+        on, off = 0, 0
+        for bin in list:
+            if bin[i] == '1':
+                on += 1
+            else:
+                off += 1
+        if on > off:
+            most += '1'
+        else:
+            most += '0'
+    for n in most:
+        if n == '1':
+            least += '0'
+        else:
+            least += '1'
+    return int(most, 2) * int(least, 2)
