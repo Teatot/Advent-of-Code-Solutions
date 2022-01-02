@@ -469,8 +469,3 @@ def sol16 (codes):
 
         total += DecodeMessage(segment[1].split(), key)
     return total
-
-
-# Output
-print(sol5(FileReadDayTwo("Solution Three Data")))
-
