@@ -28,6 +28,3 @@ def DayTwo (list):
         a += 1
         b += 1
     return incr
-
-print(DayOne(ReadFile("Data Files\\Solution One Data")))
-print(DayTwo(ReadFile("Data Files\\Solution One Data")))
