@@ -31,6 +31,3 @@ def DayTwo (list):
         elif seq[0] == "down":
             aim += int(seq[1])
     return hor * dep
-
-print(DayOne(ReadFile("Data Files\\Solution Two Data")))
-print(DayTwo(ReadFile("Data Files\\Solution Two Data")))
