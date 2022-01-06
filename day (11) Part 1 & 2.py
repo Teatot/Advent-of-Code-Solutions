@@ -101,4 +101,3 @@ def DayTwo (grid):
         if Check_Flashes(grid) == (len(grid) * len(grid[0])):
             return steps
 
-print(DayTwo(ReadFile("Data Files\\Solution Eleven Data")))
