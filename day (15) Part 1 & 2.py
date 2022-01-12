@@ -9,6 +9,11 @@ def ReadFile (name):
     return grid
 
 
+def lowest_risks(path):
+    for p, r, c in path:
+        if p == min([x[0] for x in path]):
+            return (p, r, c)
+
 
 def add_grid(g, v):
     grid = [[x for x in range(len(g))] for _ in range(len(g[0]))]
@@ -39,7 +44,8 @@ def DayOne (grid):
     maxy = len(grid[0])
 
     while len(path) > 0:
-        val, r, c = path.pop()
+        val, r, c = min(path)
+        path.remove(min(path))
 
         if r == maxx - 1 and c == maxy - 1:
             return val
@@ -54,7 +60,6 @@ def DayOne (grid):
             if 0 <= xr < maxx and 0 <= yc < maxy:
                 # Queue
                 path.append((val + grid[xr][yc], xr, yc))
-                path = sorted(path, reverse=True)
 
 
 # Day 15 Problem 2
@@ -79,9 +84,10 @@ def DayTwo (grid):
     path = [(0, 0, 0)]
     visited = set()
     while len(path) > 0:
-        val, r, c = path.pop()
+        val, r, c = min(path)
+        path.remove(min(path))
 
-        if r == maxx and c == maxy:
+        if r == maxx - 1 and c == maxy - 1:
             return val
 
         if (r, c) in visited:
@@ -93,4 +99,5 @@ def DayTwo (grid):
             cc = yr + c
             if 0 <= rr < maxx and 0 <= cc < maxy:
                 path.append((val + upd_grid[rr][cc], rr, cc))
-                path = sorted(path, reverse=True)
+
+
