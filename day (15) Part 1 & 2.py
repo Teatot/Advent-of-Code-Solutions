@@ -9,12 +9,6 @@ def ReadFile (name):
     return grid
 
 
-def lowest_risks(path):
-    for p, r, c in path:
-        if p == min([x[0] for x in path]):
-            return (p, r, c)
-
-
 def add_grid(g, v):
     grid = [[x for x in range(len(g))] for _ in range(len(g[0]))]
     for r in range(len(g)):
