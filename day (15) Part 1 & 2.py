@@ -1,3 +1,6 @@
+# Shoutout to https://www.youtube.com/channel/UCMhk437GeN8069t7y0lJQbw for the help on Part 1!
+
+
 def ReadFile (name):
     with open(name, "r") as data:
         grid = []
